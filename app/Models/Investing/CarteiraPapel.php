@@ -3,7 +3,7 @@
 namespace App\Models\Investing;
 
 use Auth;
-use TCG\Voyager\User;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
