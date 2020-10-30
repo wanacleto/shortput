@@ -151,30 +151,30 @@ class CarteiraAtivo extends Model
     // }
 
 
-    // public function carteiraPapeisId()
-    // {
-    //     return $this->belongsTo(CarteiraPapel::class);
-    // }
+    public function carteiraPapeisId()
+    {
+        return $this->belongsTo(CarteiraPapel::class);
+    }
 
-    // public function carteiraPapeisIdList() 
-    // {
+    public function carteiraPapeisIdList() 
+    {
         
-    //     if($this->carteira_papel_id){
+        if($this->carteira_papel_id){
               
-    //         return CarteiraPapel::where('id', '=', $this->carteira_papel_id)->orderBy('created_at')->get();      
+            return CarteiraPapel::where('id', '=', $this->carteira_papel_id)->orderBy('created_at')->get();      
             
-    //     }else{
+        }else{
 
-    //           //$ip = getenv("REMOTE_ADDR");
-    //           $URL_ATUAL= "$_SERVER[REQUEST_URI]";
-    //           $array = explode("/", $URL_ATUAL);       
-    //           $id = $array[3];         
+              //$ip = getenv("REMOTE_ADDR");
+              $URL_ATUAL= "$_SERVER[REQUEST_URI]";
+              $array = explode("/", $URL_ATUAL);       
+              $id = $array[3];         
               
-    //           return CarteiraPapel::where('status', '=', 1)->where('carteira_id', '=', $id)->orderBy('created_at')->get();    
+              return CarteiraPapel::where('status', '=', 1)->where('carteira_id', '=', $id)->orderBy('created_at')->get();    
                  
-    //     }        
+        }        
        
-    // }
+    }
 
     
     public function carteiraId()
