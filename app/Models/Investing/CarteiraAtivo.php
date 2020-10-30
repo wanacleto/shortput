@@ -134,47 +134,47 @@ class CarteiraAtivo extends Model
 
 
 
-    public function getNomePapelAttribute()    
-    {  
+    // public function getNomePapelAttribute()    
+    // {  
         
-        $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
-        $nome_papel = $papel->nome;
-        return $nome_papel; 
-    }
+    //     $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
+    //     $nome_papel = $papel->nome;
+    //     return $nome_papel; 
+    // }
 
-    public function getNomeCarteiraAttribute()    
-    {  
+    // public function getNomeCarteiraAttribute()    
+    // {  
         
-        $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
-        $nome_carteira  = $carteira->nome_carteira;
-        return $nome_carteira; 
-    }
+    //     $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
+    //     $nome_carteira  = $carteira->nome_carteira;
+    //     return $nome_carteira; 
+    // }
 
 
-    public function carteiraPapeisId()
-    {
-        return $this->belongsTo(CarteiraPapel::class);
-    }
+    // public function carteiraPapeisId()
+    // {
+    //     return $this->belongsTo(CarteiraPapel::class);
+    // }
 
-    public function carteiraPapeisIdList() 
-    {
+    // public function carteiraPapeisIdList() 
+    // {
         
-        if($this->carteira_papel_id){
+    //     if($this->carteira_papel_id){
               
-            return CarteiraPapel::where('id', '=', $this->carteira_papel_id)->orderBy('created_at')->get();      
+    //         return CarteiraPapel::where('id', '=', $this->carteira_papel_id)->orderBy('created_at')->get();      
             
-        }else{
+    //     }else{
 
-              //$ip = getenv("REMOTE_ADDR");
-              $URL_ATUAL= "$_SERVER[REQUEST_URI]";
-              $array = explode("/", $URL_ATUAL);       
-              $id = $array[3];         
+    //           //$ip = getenv("REMOTE_ADDR");
+    //           $URL_ATUAL= "$_SERVER[REQUEST_URI]";
+    //           $array = explode("/", $URL_ATUAL);       
+    //           $id = $array[3];         
               
-              return CarteiraPapel::where('status', '=', 1)->where('carteira_id', '=', $id)->orderBy('created_at')->get();    
+    //           return CarteiraPapel::where('status', '=', 1)->where('carteira_id', '=', $id)->orderBy('created_at')->get();    
                  
-        }        
+    //     }        
        
-    }
+    // }
 
     
     public function carteiraId()
