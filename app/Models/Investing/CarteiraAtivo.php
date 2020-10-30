@@ -13,122 +13,122 @@ class CarteiraAtivo extends Model
     protected $fillable = [ 'carteira_id', 'carteira_papeis_id', 'calendario_id', 'estrategia_id', 'nome_papel', 'nome_carteira', 'nome_calendario', 'data_compra', 'data_venda', 'valor_papel', 'valor_entrada', 'valor_medio', 'valor_saida', 'valor_final', 'valor_strike', 'valor_total', 'valor_garantia', 'taxa_inicial', 'taxa_final', 'taxa_ir', 'rentabilidde', 'quantidade', 'codigo', 'nota', 'garantia', 'lucro', 'ir', 'status', 'user_id' ];
 
     
-    public function getValorFinalAttribute()    
-    {  
+    // public function getValorFinalAttribute()    
+    // {  
         
-        $x = $this->attributes['valor_entrada'];
-        $y = $this->attributes['valor_saida'];
-        $a = $x - $y;      
-        $a = number_format($a, 2, '.', '');
-        return $a; 
-    }
+    //     $x = $this->attributes['valor_entrada'];
+    //     $y = $this->attributes['valor_saida'];
+    //     $a = $x - $y;      
+    //     $a = number_format($a, 2, '.', '');
+    //     return $a; 
+    // }
 
-    public function setValorFinalAttribute($value)
-    {
-        $x = $this->attributes['valor_entrada'];
-        $y = $this->attributes['valor_saida'];
-        $a = $x - $y;      
-        $a = number_format($a, 2, '.', '');
-        $this->attributes['valor_final'] = $a;
-    }
+    // public function setValorFinalAttribute($value)
+    // {
+    //     $x = $this->attributes['valor_entrada'];
+    //     $y = $this->attributes['valor_saida'];
+    //     $a = $x - $y;      
+    //     $a = number_format($a, 2, '.', '');
+    //     $this->attributes['valor_final'] = $a;
+    // }
 
 
-    public function getValorTotalAttribute()    
-    {  
+    // public function getValorTotalAttribute()    
+    // {  
         
-        if($this->id){
+    //     if($this->id){
               
-            $x = $this->attributes['valor_entrada'];
-            $y = $this->attributes['valor_saida'];
-            $a = $x - $y;      
-            $b = $a * $this->attributes['quantidade'];
-            $b = number_format($b, 2, '.', '');
-            return $b;       
+    //         $x = $this->attributes['valor_entrada'];
+    //         $y = $this->attributes['valor_saida'];
+    //         $a = $x - $y;      
+    //         $b = $a * $this->attributes['quantidade'];
+    //         $b = number_format($b, 2, '.', '');
+    //         return $b;       
             
-        }else{
+    //     }else{
                          
-        }        
+    //     }        
        
-    }
+    // }
 
-    public function setValorTotalAttribute($value)
-    {
-        $x = $this->attributes['valor_entrada'];
-        $y = $this->attributes['valor_saida'];
-        $a = $x - $y;      
-        $b = $a * $this->attributes['quantidade'];
-        $b = number_format($b, 2, '.', '');
-        $this->attributes['valor_total'] = $b; 
-    }
+    // public function setValorTotalAttribute($value)
+    // {
+    //     $x = $this->attributes['valor_entrada'];
+    //     $y = $this->attributes['valor_saida'];
+    //     $a = $x - $y;      
+    //     $b = $a * $this->attributes['quantidade'];
+    //     $b = number_format($b, 2, '.', '');
+    //     $this->attributes['valor_total'] = $b; 
+    // }
 
-    public function getValorGarantiaAttribute()    
-    {  
-        if($this->id){
+    // public function getValorGarantiaAttribute()    
+    // {  
+    //     if($this->id){
               
-            $x = $this->attributes['valor_strike'];
-            $y = $this->attributes['quantidade'];
-            $a = $x * $y;      
-            $a = number_format($a, 2, '.', '');
-            return $a; 
+    //         $x = $this->attributes['valor_strike'];
+    //         $y = $this->attributes['quantidade'];
+    //         $a = $x * $y;      
+    //         $a = number_format($a, 2, '.', '');
+    //         return $a; 
             
-        }else{
+    //     }else{
                          
-        }       
+    //     }       
         
-    }
+    // }
 
-    public function setValorGarantiaAttribute($value)
-    {
-        $x = $this->attributes['valor_strike'];
-        $y = $this->attributes['quantidade'];
-        $a = $x * $y;  
-        $a = number_format($a, 2, '.', '');            
-        $this->attributes['valor_garantia'] = $a; 
-    }
+    // public function setValorGarantiaAttribute($value)
+    // {
+    //     $x = $this->attributes['valor_strike'];
+    //     $y = $this->attributes['quantidade'];
+    //     $a = $x * $y;  
+    //     $a = number_format($a, 2, '.', '');            
+    //     $this->attributes['valor_garantia'] = $a; 
+    // }
 
-    public function getTaxaInicialAttribute()    
-    {  
+    // public function getTaxaInicialAttribute()    
+    // {  
         
-        $x = $this->attributes['valor_strike'];
-        $y = $this->attributes['valor_entrada'];
-        $a = ($y / $x)*100;      
+    //     $x = $this->attributes['valor_strike'];
+    //     $y = $this->attributes['valor_entrada'];
+    //     $a = ($y / $x)*100;      
  
-        return number_format($a, 2, '.', '');
-    }
+    //     return number_format($a, 2, '.', '');
+    // }
 
-    public function setTaxaInicialAttribute($value)
-    {
-        $x = $this->attributes['valor_strike'];
-        $y = $this->attributes['valor_entrada'];
-        $a = ($y / $x)*100;
-        $a = number_format($a, 2, '.', '');      
+    // public function setTaxaInicialAttribute($value)
+    // {
+    //     $x = $this->attributes['valor_strike'];
+    //     $y = $this->attributes['valor_entrada'];
+    //     $a = ($y / $x)*100;
+    //     $a = number_format($a, 2, '.', '');      
  
-        $this->attributes['taxa_inicial'] = $a;
-    }
+    //     $this->attributes['taxa_inicial'] = $a;
+    // }
 
-    public function getTaxaFinalAttribute()    
-    {  
+    // public function getTaxaFinalAttribute()    
+    // {  
         
-        $x = $this->attributes['valor_entrada'];
-        $y = $this->attributes['valor_saida'];
-        $a = $x - $y;    
-        $x = $this->attributes['valor_strike'];
-        $a = ($a / $x)*100;      
+    //     $x = $this->attributes['valor_entrada'];
+    //     $y = $this->attributes['valor_saida'];
+    //     $a = $x - $y;    
+    //     $x = $this->attributes['valor_strike'];
+    //     $a = ($a / $x)*100;      
  
-        return number_format($a, 2, '.', ''); 
-    }
+    //     return number_format($a, 2, '.', ''); 
+    // }
 
-    public function setTaxaFinalAttribute($value)
-    {
-        $x = $this->attributes['valor_entrada'];
-        $y = $this->attributes['valor_saida'];
-        $a = $x - $y;    
-        $x = $this->attributes['valor_strike'];
-        $a = ($a / $x)*100;   
-        $a = number_format($a, 2, '.', '');    
+    // public function setTaxaFinalAttribute($value)
+    // {
+    //     $x = $this->attributes['valor_entrada'];
+    //     $y = $this->attributes['valor_saida'];
+    //     $a = $x - $y;    
+    //     $x = $this->attributes['valor_strike'];
+    //     $a = ($a / $x)*100;   
+    //     $a = number_format($a, 2, '.', '');    
  
-        $this->attributes['taxa_final'] = $a;
-    }
+    //     $this->attributes['taxa_final'] = $a;
+    // }
 
     
 
@@ -238,5 +238,5 @@ class CarteiraAtivo extends Model
         return User::where('id', '=', Auth::user()->id)->orderBy('name')->get();   
       
     }
-    
+
 }
