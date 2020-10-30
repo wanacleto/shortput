@@ -10,4 +10,6 @@ git remote add origin https://github.com/wanacleto/shortput.git
 git branch -M main
 git push -u origin main
 
-pa make:controller HomeController
+php artisan migrate --seed
+php artisan make:controller HomeController
+php artisan make:controller UsersController

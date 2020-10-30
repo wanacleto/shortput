@@ -46,7 +46,11 @@
                                         Manage Account
                                     </div>
 
-                                    <jet-dropdown-link :href="route('profile.show')">
+                                    <jet-dropdown-link :href="route('about')">
+                                        About
+                                    </jet-dropdown-link>
+
+                                     <jet-dropdown-link :href="route('profile.show')">
                                         Profile
                                     </jet-dropdown-link>
 
@@ -193,8 +197,8 @@
         </nav>
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <header class="bg-white shadow" style="background:linear-gradient(to right, #1e469a, #49a7c1);">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8" >
                 <slot name="header"></slot>
             </div>
         </header>

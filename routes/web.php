@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\OrganizationsController;
+use App\Http\Controllers\ReportsController;
+use App\Http\Controllers\PersonsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [HomeController::class, 'about']);
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/register', [HomeController::class, 'register']);
 Route::post('/register', [HomeController::class, 'registerStore']);
 
@@ -31,3 +39,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
