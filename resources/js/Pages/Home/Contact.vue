@@ -11,7 +11,7 @@
             </tr>
             </thead>
             <tr v-for="row in data">
-                <td></td>
+                <td>{{row}}</td>
                 <td></td>
                 <td width="130">
                     <button @click="edit(row)" class="btn btn-sm btn-primary">Edit</button>

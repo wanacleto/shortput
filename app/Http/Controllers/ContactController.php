@@ -11,6 +11,7 @@ class ContactController extends Controller
     {
         $data = Contact::all();
         return Inertia::render('Home/Contact', ['data' => $data]);
+        
     }
     
     public function store(Request $request)
