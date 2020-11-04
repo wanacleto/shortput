@@ -3624,30 +3624,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data'],
   data: function data() {
@@ -27566,46 +27542,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-md-6" }, [
     _c(
-      "div",
-      { staticClass: "alert alert-primary", attrs: { role: "alert" } },
-      [_vm._v("\n  This is a primary alert—check it out!\n")]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "alert alert-secondary", attrs: { role: "alert" } },
-      [_vm._v("\n  This is a secondary alert—check it out!\n")]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "alert alert-success", attrs: { role: "alert" } },
-      [_vm._v("\n  This is a success alert—check it out!\n")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "alert alert-danger", attrs: { role: "alert" } }, [
-      _vm._v("\n  This is a danger alert—check it out!\n")
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "alert alert-warning", attrs: { role: "alert" } },
-      [_vm._v("\n  This is a warning alert—check it out!\n")]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "alert alert-info", attrs: { role: "alert" } }, [
-      _vm._v("\n  This is a info alert—check it out!\n")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "alert alert-light", attrs: { role: "alert" } }, [
-      _vm._v("\n  This is a light alert—check it out!\n")
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "alert alert-dark", attrs: { role: "alert" } }, [
-      _vm._v("\n  This is a dark alert—check it out!\n")
-    ]),
-    _vm._v(" "),
-    _c(
       "button",
       {
         staticClass: "btn btn-sm btn-primary",
@@ -27759,7 +27695,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Save\n                        ")]
+              [_vm._v("Save\n                    ")]
             ),
             _vm._v(" "),
             _c(
@@ -27781,7 +27717,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Update\n                        ")]
+              [_vm._v("Update\n                    ")]
             )
           ])
         ])
