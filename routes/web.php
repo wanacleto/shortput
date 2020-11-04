@@ -29,7 +29,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::post('/register', [HomeController::class, 'registerStore']);
-Route::get('/contacts', [HomeController::class, 'index'])->name('contacts');
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
 //Route::resource('/contacts', 'ContactController')->name('contacts');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
