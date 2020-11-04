@@ -10,9 +10,9 @@
                 <td>Action</td>
             </tr>
             </thead>
-            <tr v-for="row in data" >
-                <td>{{row}}</td>
-                <td>{{row}}</td>
+            <tr v-for="row in data">
+                <td></td>
+                <td></td>
                 <td width="130">
                     <button @click="edit(row)" class="btn btn-sm btn-primary">Edit</button>
                     <button @click="deleteRow(row)" class="btn btn-sm btn-danger">Del</button>
