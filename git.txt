@@ -19,3 +19,27 @@ php artisan make:model Contact -m -c --resource
 
 Contact
 php artisan voyager:admin anacleto7@hotmail.com
+php artisan voyager:admin admin@admin.com
+
+
+
+LARAVEL VUE NODE http://webvuejs.herokuapp.com/admin
+instalar node = npm i ou npm install
+heroku login
+heroku apps
+heroku git:remote -a webvuejs 
+
+heroku run php /app/artisan voyager:install --with-dummy
+heroku run "php artisan migrate"
+
+php artisan config:cache
+
+heroku run php /app/artisan config:cache
+
+heroku auth:login
+heroku apps
+heroku git:remote -a sesau-covid  
+heroku run php /app/artisan migrate --seed
+heroku run php /app/artisan storage:link
+heroku plugins:install heroku-pg-extras
+heroku run bash
