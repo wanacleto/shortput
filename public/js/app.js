@@ -27560,10 +27560,10 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _vm._l(_vm.data, function(row) {
-          return _c("tr", [
-            _c("td", [_vm._v(_vm._s(row))]),
+          return _c("tr", { key: row.id }, [
+            _c("td", [_vm._v(_vm._s(row.name))]),
             _vm._v(" "),
-            _c("td"),
+            _c("td", [_vm._v(_vm._s(row.phone))]),
             _vm._v(" "),
             _c("td", { attrs: { width: "130" } }, [
               _c(
