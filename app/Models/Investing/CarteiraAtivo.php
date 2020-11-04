@@ -131,9 +131,6 @@ class CarteiraAtivo extends Model
     }
 
     
-
-
-
     // public function getNomePapelAttribute()    
     // {  
         

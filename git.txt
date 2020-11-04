@@ -13,6 +13,9 @@ git push -u origin main
 php artisan migrate --seed
 php artisan make:controller HomeController
 php artisan make:controller UsersController
+php artisan make:controller ContactController
 
+php artisan make:model Contact -m -c --resource
 
+Contact
 php artisan voyager:admin anacleto7@hotmail.com
