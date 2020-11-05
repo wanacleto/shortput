@@ -3057,6 +3057,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -26085,6 +26088,16 @@ var render = function() {
                                 [
                                   _vm._v(
                                     "\n                                    Manage Account\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "jet-dropdown-link",
+                                { attrs: { href: _vm.route("home") } },
+                                [
+                                  _vm._v(
+                                    "\n                                    Home\n                                "
                                   )
                                 ]
                               ),
