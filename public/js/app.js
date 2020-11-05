@@ -3615,23 +3615,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data'],
   data: function data() {
@@ -27570,189 +27553,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-6" }, [
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-sm btn-primary",
-        on: {
-          click: function($event) {
-            return _vm.openModal()
-          }
-        }
-      },
-      [_vm._v("Add New")]
-    ),
-    _vm._v(" "),
+  return _c("div", { staticClass: "bg-white rounded shadow overflow-x-auto" }, [
     _c(
       "table",
-      {
-        staticClass:
-          "table table-bordered table-condensed table-striped table-hover"
-      },
+      { staticClass: "w-full whitespace-no-wrap" },
       [
         _vm._m(0),
         _vm._v(" "),
-        _vm._l(_vm.data, function(row) {
-          return _c("tr", { key: row.id }, [
-            _c("td", [_vm._v(_vm._s(row.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(row.phone))]),
-            _vm._v(" "),
-            _c("td", { attrs: { width: "130" } }, [
+        _vm._l(_vm.data, function(user) {
+          return _c(
+            "tr",
+            {
+              key: user.id,
+              staticClass: "hover:bg-gray-100 focus-within:bg-gray-100"
+            },
+            [
               _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm btn-primary",
-                  on: {
-                    click: function($event) {
-                      return _vm.edit(row)
-                    }
-                  }
-                },
-                [_vm._v("Edit")]
+                "td",
+                { staticClass: "border-t" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "px-6 py-4 flex items-center focus:text-indigo-500"
+                    },
+                    [
+                      user.name
+                        ? _c("img", {
+                            staticClass:
+                              "block w-5 h-5 rounded-full mr-2 -my-2",
+                            attrs: { src: user.name }
+                          })
+                        : _vm._e(),
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(user.name) +
+                          "\n              "
+                      ),
+                      user.deleted_at
+                        ? _c("icon", {
+                            staticClass:
+                              "flex-shrink-0 w-3 h-3 fill-gray-400 ml-2",
+                            attrs: { name: "trash" }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ],
+                1
               ),
               _vm._v(" "),
               _c(
-                "button",
-                {
-                  staticClass: "btn btn-sm btn-danger",
-                  on: {
-                    click: function($event) {
-                      return _vm.deleteRow(row)
-                    }
-                  }
-                },
-                [_vm._v("Del")]
+                "td",
+                { staticClass: "border-t" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass: "px-6 py-4 flex items-center",
+                      attrs: { href: _vm.route("contacts"), tabindex: "-1" }
+                    },
+                    [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(user.phone) +
+                          "\n            "
+                      )
+                    ]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                { staticClass: "border-t" },
+                [
+                  _c("inertia-link", {
+                    staticClass: "px-6 py-4 flex items-center",
+                    attrs: { href: _vm.route("contacts"), tabindex: "-1" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "td",
+                { staticClass: "border-t w-px" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass: "px-4 flex items-center",
+                      attrs: { href: _vm.route("contacts"), tabindex: "-1" }
+                    },
+                    [
+                      _c("icon", {
+                        staticClass: "block w-6 h-6 fill-gray-400",
+                        attrs: { name: "cheveron-right" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _vm.users.length === 0
+          ? _c("tr", [
+              _c(
+                "td",
+                { staticClass: "border-t px-6 py-4", attrs: { colspan: "4" } },
+                [_vm._v("No users found.")]
               )
             ])
-          ])
-        })
+          : _vm._e()
       ],
       2
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal fade", attrs: { id: "modal" } }, [
-      _c("div", { staticClass: "modal-dialog" }, [
-        _c("div", { staticClass: "modal-content" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-body" }, [
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.name,
-                    expression: "form.name"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { required: "", id: "name" },
-                domProps: { value: _vm.form.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "name", $event.target.value)
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "phone" } }, [_vm._v("Phone")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.form.phone,
-                    expression: "form.phone"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: { required: "", id: "phone" },
-                domProps: { value: _vm.form.phone },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.form, "phone", $event.target.value)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "modal-footer" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-default",
-                attrs: { type: "button" },
-                on: {
-                  click: function($event) {
-                    return _vm.closeModal()
-                  }
-                }
-              },
-              [_vm._v("Close")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.editMode,
-                    expression: "!editMode"
-                  }
-                ],
-                staticClass: "btn btn-primary",
-                attrs: { type: "submit" },
-                on: {
-                  click: function($event) {
-                    return _vm.save(_vm.form)
-                  }
-                }
-              },
-              [_vm._v("Save\n                    ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.editMode,
-                    expression: "editMode"
-                  }
-                ],
-                staticClass: "btn btn-primary",
-                attrs: { type: "submit" },
-                on: {
-                  click: function($event) {
-                    return _vm.update(_vm.form)
-                  }
-                }
-              },
-              [_vm._v("Update\n                    ")]
-            )
-          ])
-        ])
-      ])
-    ])
+    )
   ])
 }
 var staticRenderFns = [
@@ -27760,22 +27683,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", { staticClass: "thead-dark" }, [
-      _c("tr", [
-        _c("td", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Phone")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Action")])
+    return _c("tr", { staticClass: "text-left font-bold" }, [
+      _c("th", { staticClass: "px-6 pt-6 pb-4" }, [_vm._v("Name")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "px-6 pt-6 pb-4" }, [_vm._v("Email")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "px-6 pt-6 pb-4", attrs: { colspan: "2" } }, [
+        _vm._v("Role")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h4", { staticClass: "modal-title" }, [_vm._v("New Contact")])
     ])
   }
 ]
