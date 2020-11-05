@@ -1,43 +1,59 @@
 <template>
 
-<div class="bg-white rounded shadow overflow-x-auto">
-      <table class="w-full whitespace-no-wrap">
-        <tr class="text-left font-bold">
-          <th class="px-6 pt-6 pb-4">Name</th>
-          <th class="px-6 pt-6 pb-4">Email</th>
-          <th class="px-6 pt-6 pb-4" colspan="2">Role</th>
-        </tr>
-        <tr v-for="user in data" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
-          <td class="border-t">
-            <inertia-link class="px-6 py-4 flex items-center focus:text-indigo-500">
-              <img v-if="user.name" class="block w-5 h-5 rounded-full mr-2 -my-2" :src="user.name">
-              {{ user.name }}
-              <icon v-if="user.deleted_at" name="trash" class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2" />
-            </inertia-link>
-          </td>
-          <td class="border-t">
-            <inertia-link class="px-6 py-4 flex items-center" :href="route('contacts')" tabindex="-1">
-              {{ user.phone }}
-            </inertia-link>
-          </td>
-          <td class="border-t">
-            <inertia-link class="px-6 py-4 flex items-center" :href="route('contacts')" tabindex="-1">
-              <!-- {{ user.pho ? 'Owner' : 'User' }} -->
-            </inertia-link>
-          </td>
-          <td class="border-t w-px">
-            <inertia-link class="px-4 flex items-center" :href="route('contacts')" tabindex="-1">
-              <icon name="cheveron-right" class="block w-6 h-6 fill-gray-400" />
-            </inertia-link>
-          </td>
-        </tr>
-        <tr v-if="users.length === 0">
-          <td class="border-t px-6 py-4" colspan="4">No users found.</td>
-        </tr>
-      </table>
+    <div class="col-md-6">
+        <button class="btn btn-sm btn-primary" @click="openModal()">Add New</button>
+        <table class="table table-bordered table-condensed table-striped table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <td>Name</td>
+                <td>Phone</td>
+                <td>Action</td>
+            </tr>
+            </thead>
+            <tr v-for="row in data" :key="row.id">
+                <td>{{row.name}}</td>
+                <td>{{row.phone}}</td>
+                <td width="130">
+                    <button @click="edit(row)" class="btn btn-sm btn-primary">Edit</button>
+                    <button @click="deleteRow(row)" class="btn btn-sm btn-danger">Del</button>
+                </td>
+            </tr>
+        </table>
+
+        <div class="modal fade" id="modal">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">New Contact</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input class="form-control" required id="name" v-model="form.name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input class="form-control" required id="phone" v-model="form.phone"/>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" @click="closeModal()">Close</button>
+                        <button type="submit" class="btn btn-primary" v-show="!editMode" @click="save(form)">Save
+                        </button>
+                        <button type="submit" class="btn btn-primary" v-show="editMode" @click="update(form)">Update
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
     </div>
 
- 
 
 </template>
 
