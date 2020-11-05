@@ -50,8 +50,12 @@
                                         About
                                     </jet-dropdown-link>
 
-                                     <jet-dropdown-link :href="route('register')">
+                                    <jet-dropdown-link :href="route('register')">
                                         Register
+                                    </jet-dropdown-link>
+
+                                    <jet-dropdown-link :href="route('contacts')">
+                                        Contact
                                     </jet-dropdown-link>
 
                                      <jet-dropdown-link :href="route('profile.show')">

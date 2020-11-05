@@ -3,6 +3,7 @@
         <inertia-link href="/home">Home</inertia-link>
         <inertia-link href="/about">Sobre</inertia-link>
         <inertia-link href="/register">Registro</inertia-link>
+        <inertia-link href="/contacts">Contact</inertia-link>
         <div>
                 <slot />
         </div>

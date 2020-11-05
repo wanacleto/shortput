@@ -3053,6 +3053,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -3105,6 +3109,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -26106,6 +26111,16 @@ var render = function() {
                               _vm._v(" "),
                               _c(
                                 "jet-dropdown-link",
+                                { attrs: { href: _vm.route("contacts") } },
+                                [
+                                  _vm._v(
+                                    "\n                                    Contact\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "jet-dropdown-link",
                                 { attrs: { href: _vm.route("profile.show") } },
                                 [
                                   _vm._v(
@@ -26676,6 +26691,8 @@ var render = function() {
       _c("inertia-link", { attrs: { href: "/register" } }, [
         _vm._v("Registro")
       ]),
+      _vm._v(" "),
+      _c("inertia-link", { attrs: { href: "/contacts" } }, [_vm._v("Contact")]),
       _vm._v(" "),
       _c("div", [_vm._t("default")], 2)
     ],
