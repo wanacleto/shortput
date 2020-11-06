@@ -1,6 +1,6 @@
 <template>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
         <button class="btn btn-sm btn-primary" @click="openModal()">Add New</button>
         <table class="table table-bordered table-condensed table-striped table-hover">
             <thead class="thead-dark">

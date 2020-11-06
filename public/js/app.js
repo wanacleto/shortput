@@ -27569,7 +27569,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-6" }, [
+  return _c("div", { staticClass: "col-md-12" }, [
     _c(
       "button",
       {
@@ -46685,6 +46685,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
   methods: {
