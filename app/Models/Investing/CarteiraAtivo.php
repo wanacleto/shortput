@@ -139,17 +139,18 @@ class CarteiraAtivo extends Model
     {  
         
         $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
-        $nome_papel = $papel->nome;
+        //$nome_papel = $papel->nome;
+        dd($papel);
         return $nome_papel; 
     }
 
-    public function getNomeCarteiraAttribute()    
-    {  
+    // public function getNomeCarteiraAttribute()    
+    // {  
         
-        $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
-        $nome_carteira  = $carteira->nome_carteira;
-        return $nome_carteira; 
-    }
+    //     $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
+    //     $nome_carteira  = $carteira->nome_carteira;
+    //     return $nome_carteira; 
+    // }
 
 
     public function carteiraPapeisId()
