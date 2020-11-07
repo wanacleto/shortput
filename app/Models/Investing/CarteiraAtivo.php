@@ -138,7 +138,8 @@ class CarteiraAtivo extends Model
     public function getNomePapelAttribute()    
     {  
         
-        $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
+        //$papel = Papel::where('id', '=', $this->id)->select('nome')->first();
+        $papel = Papel::all();
         //$nome_papel = $papel->nome;
         dd($papel);
         return $nome_papel; 
