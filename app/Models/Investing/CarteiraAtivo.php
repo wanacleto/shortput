@@ -12,6 +12,10 @@ class CarteiraAtivo extends Model
     protected $primaryKey = 'id';
     protected $fillable = [ 'carteira_id', 'carteira_papeis_id', 'calendario_id', 'estrategia_id', 'nome_papel', 'nome_carteira', 'nome_calendario', 'data_compra', 'data_venda', 'valor_papel', 'valor_entrada', 'valor_medio', 'valor_saida', 'valor_final', 'valor_strike', 'valor_total', 'valor_garantia', 'taxa_inicial', 'taxa_final', 'taxa_ir', 'rentabilidde', 'quantidade', 'codigo', 'nota', 'garantia', 'lucro', 'ir', 'status', 'user_id' ];
 
+    public function scopeCurrentUser($query)
+    {
+        return $query->where('author_id', Auth::user()->id);
+    }
     
     public function getValorFinalAttribute()    
     {  
@@ -131,21 +135,21 @@ class CarteiraAtivo extends Model
     }
 
     
-    // public function getNomePapelAttribute()    
-    // {  
+    public function getNomePapelAttribute()    
+    {  
         
-    //     $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
-    //     $nome_papel = $papel->nome;
-    //     return $nome_papel; 
-    // }
+        $papel = Papel::where('id', '=', $this->id)->select('nome')->first();
+        $nome_papel = $papel->nome;
+        return $nome_papel; 
+    }
 
-    // public function getNomeCarteiraAttribute()    
-    // {  
+    public function getNomeCarteiraAttribute()    
+    {  
         
-    //     $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
-    //     $nome_carteira  = $carteira->nome_carteira;
-    //     return $nome_carteira; 
-    // }
+        $carteira = Carteira::where('id', '=', $this->carteira_id)->select('nome_carteira')->first();
+        $nome_carteira  = $carteira->nome_carteira;
+        return $nome_carteira; 
+    }
 
 
     public function carteiraPapeisId()
